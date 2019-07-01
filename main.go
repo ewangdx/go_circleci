@@ -8,5 +8,5 @@ func testMore(){}
 
 func main() {
 	i := 5
-    fmt.Printf("hello world %v\n", i)
+    fmt.Printf("hello world good %v\n", i)
 }
