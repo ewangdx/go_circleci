@@ -42,11 +42,10 @@ jobs: # basic units of work in a run
 
       - run: go get -u golang.org/x/lint/golint
       - run: golint -set_exit_status $(go list ./... | grep -v /vendor/ | grep -v /explorer/idl/ | grep -v /api/idl/)
+      - run: gofmt -s *.go
       - run: ./go.test.sh
       - run: bash <(curl -s https://codecov.io/bash)
       - run: go test -run=XXX -bench=. $(go list ./crypto)
-
-      - run: gofmt -s *.go
 
       - run: make # pull and build dependencies for the project
 
