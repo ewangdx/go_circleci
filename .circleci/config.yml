@@ -10,6 +10,7 @@ jobs: # basic units of work in a run
           POSTGRES_USER: circleci-demo-go
           POSTGRES_DB: circle_test
 
+    working_directory: ${GOPATH}/src/github.com/DxChainNetwork/go_circleci
     # parallelism: 2s
 
     environment: # environment variables for the build itself
@@ -38,6 +39,11 @@ jobs: # basic units of work in a run
           command: |
             PACKAGE_NAMES=$(go list ./... | circleci tests split --split-by=timings --timings-type=classname)
             gotestsum --junitfile ${TEST_RESULTS}/gotestsum-report.xml -- $PACKAGE_NAMES
+
+      - run: golint -set_exit_status $(go list ./... | grep -v /vendor/ | grep -v /explorer/idl/ | grep -v /api/idl/)
+      - run: ./go.test.sh
+      - run: bash <(curl -s https://codecov.io/bash)
+      - run: go test -run=XXX -bench=. $(go list ./crypto)
 
       - run: make # pull and build dependencies for the project
 
