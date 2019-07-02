@@ -10,7 +10,7 @@ jobs: # basic units of work in a run
           POSTGRES_USER: circleci-demo-go
           POSTGRES_DB: circle_test
 
-    working_directory: ${GOPATH}/src/github.com/DxChainNetwork/go_circleci
+#    working_directory: go-workspace/src/github.com/DxChainNetwork/go_circleci
     # parallelism: 2s
 
     environment: # environment variables for the build itself
