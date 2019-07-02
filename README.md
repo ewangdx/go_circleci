@@ -7,6 +7,3 @@
 [![Coverage](https://codecov.io/gh/ewangdx/go_circleci/branch/master/graph/badge.svg)](https://codecov.io/gh/ewangdx/go_circleci)
 [![Releases](https://img.shields.io/github/release/iotexproject/iotex-core/all.svg?style=flat-square)](https://github.com/ewangdx/go_circleci/releases)
 [![LICENSE](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-
-
-https://goreportcard.com/report/github.com/ewangdx/go_circleci
