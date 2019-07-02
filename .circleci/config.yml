@@ -46,7 +46,7 @@ jobs: # basic units of work in a run
       - run: bash <(curl -s https://codecov.io/bash)
       - run: go test -run=XXX -bench=. $(go list ./crypto)
 
-      - run: gofmt -s ./
+      - run: gofmt -w ./
 
       - run: make # pull and build dependencies for the project
 
